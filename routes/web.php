@@ -29,4 +29,13 @@ Route::post('/login', 'SessionController@store')->name('login');
 Route::get('/logout', 'SessionController@destroy');
 
 
+/**
+ * Ovo ti je kao da si pisao svaku rutu posebno za GET,POST,DELETE itd
+ * Ali ako u jednom Controlleru imas rute koje su auth i koje nisu onda moras odvojeno da pises i
+ * dodas ovo middleware na kraju svake rute ako su auth
+ * I trebalo bi da im stavis i ono name
+ */
+/*Route::resource('image','ImagesController')->middleware('auth');*/
+
+
 
