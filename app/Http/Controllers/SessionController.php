@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
@@ -21,10 +24,16 @@ class SessionController extends Controller
 
     public function store()
     {
-        if(! auth()->attempt(request(['email', 'password'])))
-        {
-            return back();
+        $user = User::where('email',\request('email'))->first();
+
+        if($user){
+            \auth()->login($user);
+
+            return view('welcome')->with('content', 'posts.home');
         }
+
+
+        return redirect()->back();
     }
 
     public function destroy()

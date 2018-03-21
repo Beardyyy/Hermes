@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PostController@index');
+Route::get('/home', 'PostController@index');
 
 Route::get('/about', 'PostController@showAbout');
 
