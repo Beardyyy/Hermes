@@ -14,7 +14,7 @@ class SessionController extends Controller
 
     public function create()
     {
-        $content = "auth.login";
+        $content = "Auth.login";
 
         return view('welcome', compact('content'));
     }

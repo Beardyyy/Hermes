@@ -12,7 +12,7 @@ class RegistrationController extends Controller
     //Shows registration form
     public function create()
     {
-       $content = "auth.registration";
+       $content = "Auth.registration";
 
        return view('welcome', compact('content'));
 
