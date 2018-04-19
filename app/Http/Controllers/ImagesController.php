@@ -81,7 +81,7 @@ class ImagesController extends Controller
     public function update(UpdateImageRequest $request, Image $image)
     {
         $image->name = $request->name;
-        $image->oath = $request->path;
+        $image->path = $request->path;
 
         /**
          * itd sta sve jos imas od parametaras
